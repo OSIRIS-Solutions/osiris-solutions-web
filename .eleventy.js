@@ -37,6 +37,8 @@ module.exports = function (eleventyConfig) {
         const lang = this.ctx.lang || "de";
         return lang === "en" ? en : de;
     });
+    // Copy CNAME file to root of output
+    eleventyConfig.addPassthroughCopy("src/CNAME");
 
     return {
         dir: {
