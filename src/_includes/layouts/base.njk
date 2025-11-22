@@ -1,31 +1,44 @@
+{% set absoluteUrl = "https://osiris-solutions.de" ~ page.url %}
 <!DOCTYPE html>
 <html lang="{{ lang or 'de' }}">
     <head>
         <meta charset="utf-8"/>
-        {# <base href="https://osiris-solutions.de/"> #}
-        {# <base href="https://osiris-solutions.github.io/osiris-solutions-web/"> #}
-        <title>
-            {% if title %}
-                {{ title }} | OSIRIS Solutions{% else %}OSIRIS Solutions{% endif %}
-        </title>
+        <title>{% if title %} {{ title }}| OSIRIS Solutions{% else %}OSIRIS Solutions{% endif %}</title>
+        {# ---- SEO Meta Tags ---- #} 
+        <meta name="description" content="{{ description or "Open-Source-Lösungen für Forschungsinformationen." }}"> 
+        {# ---- OpenGraph ---- #}
+        <meta property="og:title" content="{% if title %} {{ title }}| OSIRIS Solutions{% else %}OSIRIS Solutions{% endif %}">
+        <meta property="og:description" content="{{ description or "Open-Source-Lösungen für Forschungsinformationen." }}">
+        <meta property="og:image" content="/assets/img/social-img.png">
+        <meta property="og:url" content="{{ absoluteUrl }}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="OSIRIS Solutions"> 
+        {# ---- Twitter Cards ---- #}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ title }} | OSIRIS Solutions">
+        <meta name="twitter:description" content="{{ description or "Open-Source-Lösungen für Forschungsinformationen." }}">
+        <meta name="twitter:image" content="/assets/img/social-img.png">
         <meta name="description" content="{{ description or "Open-Source-Lösungen für Forschungsinformationen." }}">
-        <meta
-        name="viewport" content="width=device-width, initial-scale=1"> {# favicon #}
-        <link
-        rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg"> {# fonts & icons & styles #}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Libre+Baskerville:ital,wght@0,600;1,600&display=swap"
-            rel="stylesheet"> {# phosphoricons #}
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"> {# favicon #}
+        <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg"> {# fonts & icons & styles #}
+        <link rel="canonical" href="{{ absoluteUrl }}">
+
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="OSIRIS Solutions GmbH">
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "OSIRIS Solutions GmbH",
+                "url": "https://osiris-solutions.de",
+                "logo": "https://osiris-solutions.de/assets/img/logo.svg",
+                "sameAs": [
+                    "https://github.com/JKoblitz/osiris"
+                ]
+            }
+        </script>
+        <link rel="stylesheet" href="/assets/fonts/phosphor-duotone/style.css">
         <link rel="stylesheet" href="/assets/styles.css">
     </head>
     <body>
@@ -91,24 +104,25 @@
             }
         });
         document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".site-header");
-  const toggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelectorAll(".site-nav a");
-
-  if (toggle && header) {
-    toggle.addEventListener("click", () => {
-      const isOpen = header.classList.toggle("nav-open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    // Menü schließen, wenn ein Link geklickt wird
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        header.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-});
+            const header = document.querySelector(".site-header");
+            const toggle = document.querySelector(".nav-toggle");
+            const navLinks = document.querySelectorAll(".site-nav a");
+            if (toggle && header) {
+                toggle.addEventListener("click", () => {
+                    const isOpen = header.classList.toggle("nav-open");
+                    toggle.setAttribute(
+                        "aria-expanded", isOpen
+                        ? "true"
+                        : "false");
+                });
+                // Menü schließen, wenn ein Link geklickt wird
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        header.classList.remove("nav-open");
+                        toggle.setAttribute("aria-expanded", "false");
+                    });
+                });
+            }
+        });
     </script>
 </html>
