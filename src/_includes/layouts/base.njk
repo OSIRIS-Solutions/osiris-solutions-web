@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'de' }}">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            {% if title %}
+                {{ title }} | OSIRIS Solutions{% else %}OSIRIS Solutions{% endif %}
+        </title>
+        <meta name="description" content="{{ description or "Open-Source-Lösungen für Forschungsinformationen." }}">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1"> {# favicon #}
+        <link
+        rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg"> {# fonts & icons & styles #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Libre+Baskerville:ital,wght@0,600;1,600&display=swap"
+            rel="stylesheet"> {# phosphoricons #}
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"/>
+        <link rel="stylesheet" href="/assets/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="logo">
+                    <img src="/assets/img/logo.svg" alt="OSIRIS Solutions Logo">
+                </a>
+                {# Mobile toggle button #}
+                <button class="nav-toggle" type="button" aria-label="{% t 'Navigation umschalten', 'Toggle navigation' %}" aria-expanded="false">
+                    <i class="ph ph-list"></i>
+                </button>
+                <div class="header-right">
+                    <nav class="site-nav">
+                        <ul>
+                            <li><a href="{% if lang == 'en' %}/en/#hero{% else %}/#hero{% endif %}">{% t "Start", "Home" %}</a></li>
+                            <li><a href="{% if lang == 'en' %}/en/#services{% else %}/#services{% endif %}">{% t "Lösungen", "Solutions" %}</a></li>
+                            <li><a href="{% if lang == 'en' %}/en/#clients{% else %}/#clients{% endif %}">{% t "Referenzen", "References" %}</a></li>
+                            <li><a href="{% if lang == 'en' %}/en/#team{% else %}/#team{% endif %}">{% t "Team", "Team" %}</a></li>
+                            <li><a href="{% if lang == 'en' %}/en/#philosophy{% else %}/#philosophy{% endif %}">{% t "Philosophie", "Philosophy" %}</a></li>
+                            <li><a href="{% if lang == 'en' %}/en/#contact{% else %}/#contact{% endif %}">{% t "Kontakt", "Contact" %}</a></li>
+                        </ul>
+                    </nav>
+                    <div class="lang-switch">
+                        {% if lang == 'en' %}
+                            <a href="/">DE</a>
+                            <span>EN</span>
+                        {% else %}
+                            <span>DE</span>
+                            <a href="/en/">EN</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="site-main">
+            {{ content | safe }}
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>© 2025 OSIRIS Solutions GmbH</p>
+                <p
+                    class="footer-links">
+                    {# if de: impressum, else imprint #}
+                    {% if lang == 'en' %}
+                        <a href="/en/imprint/">Imprint</a>
+                    {% else %}
+                        <a href="/impressum/">Impressum</a>
+                    {% endif %}
+                    <a href="/datenschutz/">Datenschutz</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+    <script>
+        // add 'scrolled' class to header on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelectorAll(".site-nav a");
+
+  if (toggle && header) {
+    toggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Menü schließen, wenn ein Link geklickt wird
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+});
+    </script>
+</html>

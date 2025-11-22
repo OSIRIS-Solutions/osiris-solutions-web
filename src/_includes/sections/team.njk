@@ -1,0 +1,56 @@
+<section class="section" id="team">
+  <h2>{% t "Team", "Team" %}</h2>
+  <p class="section-lead">
+    {% t
+      "Hinter OSIRIS Solutions steht ein kleines, spezialisiertes Team mit Erfahrung in Forschung, Softwareentwicklung und Open Science.",
+      "OSIRIS Solutions is run by a small, specialised team with experience in research, software development, and open science."
+    %}
+  </p>
+
+  <div class="team-grid">
+    {% for member in team %}
+      <article class="team-card" id="team-{{ member.id }}">
+        <div class="team-avatar">
+          {% if member.photo %}
+            <img src="{{ member.photo }}"
+                 alt="{{ member.name }}"
+                 loading="lazy">
+          {% else %}
+            <span class="team-avatar-initial">
+              {{ member.name | first }}
+            </span>
+          {% endif %}
+        </div>
+
+        <div class="team-body">
+          <h3 class="team-name">{{ member.name }}</h3>
+          <p class="team-role">
+            {{ member.role[lang] }}
+          </p>
+
+          {% if member.about[lang] %}
+            <p class="team-about">
+              {{ member.about[lang] }}
+            </p>
+          {% endif %}
+
+          {% if member.links %}
+            <div class="team-links">
+              {% if member.links.email %}
+                <a href="{{ member.links.email }}">{% t "E-Mail", "Email" %}</a>
+              {% endif %}
+              {% if member.links.github %}
+                <a href="{{ member.links.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+              {% endif %}
+              {% if member.links.website %}
+                <a href="{{ member.links.website }}" target="_blank" rel="noopener noreferrer">
+                  {% t "Website", "Website" %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

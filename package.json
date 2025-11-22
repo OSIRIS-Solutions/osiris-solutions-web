@@ -1,0 +1,14 @@
+{
+  "name": "osiris-solutions-site",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve --port=8080",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.94.2"
+  }
+}

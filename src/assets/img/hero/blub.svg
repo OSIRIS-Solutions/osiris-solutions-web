@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" width="1407.15" height="1141.65" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1407.15 1141.65">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_8);
+        opacity: .5;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_8" data-name="Unbenannter Verlauf 8" x1="-1377.42" y1="1150.59" x2="-2487.94" y2="1791.75" gradientTransform="translate(-1184.11 2132.83) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#249ea0"/>
+      <stop offset=".08" stop-color="#249ea0"/>
+      <stop offset=".49" stop-color="#008083"/>
+      <stop offset=".94" stop-color="#005f60"/>
+      <stop offset="1" stop-color="#005f60"/>
+    </linearGradient>
+  </defs>
+  <g id="_Layer_" data-name="&amp;lt;Layer&amp;gt;">
+    <path class="cls-1" d="M243.25,803.5c130.7,24.66,193.01,120.88,269.64,185.66,90.22,76.26,199.89,34,293.62,20.55,168.49-24.18,225.76,153.32,411.16,129.79,177.43-22.51,246.68-244.77,136.37-372.04-110.31-127.27-106.69-165.7-81.33-255.73,25.36-90.03,70.02-258.56-107.59-273.78-152.65-13.08-240.88-51.22-308.08-117.51-67.19-66.29-314.67-248.82-430.11,28.45-55.16,132.5-88.42,179.11-212.36,213.1C90.63,395.99,4.01,489.55.13,595.49c-3.67,100.32,68.56,175.08,243.12,208.01Z"/>
+  </g>
+</svg>

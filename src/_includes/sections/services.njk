@@ -1,0 +1,36 @@
+<section class="section" id="services">
+    <h2>{% t "Unsere Lösungen", "Our solutions" %}</h2>
+    <p class="section-lead">
+        {% t
+      "Wir bieten verschiedene Support-Optionen an, um euch bei der Nutzung von OSIRIS zu unterstützen – von der kostenlosen Community-Version bis hin zu individuellen Support- und Hosting-Optionen.",
+      "We offer different support options to help you work with OSIRIS – from the free community version to tailored support and hosting." %}
+    </p>
+    <div class="card-grid card-grid--three">
+        {% for service in services %}
+            <article class="card" id="service-{{ service.id }}">
+                <div class="card-title">
+                    <i class="ph-duotone ph-{{ service.icon }}"></i>
+                    {{ service.name[lang] }}
+                </div>
+                <p class="card-text">
+                    {{ service.description[lang] }}
+                </p>
+                {% set feats = service.features[lang] %}
+                {% if feats %}
+                    <ul class="card-list">
+                        {% for f in feats %}
+                            <li><i class="ph-duotone ph-check-circle"></i> {{ f }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if service.link %}
+                    <p class="card-link">
+                        <a href="{{ service.link.href }}" {% if service.link.external %} target="_blank" rel="noopener noreferrer" {% endif %}>
+                            {{ service.link.text }}
+                        </a>
+                    </p>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+</section>

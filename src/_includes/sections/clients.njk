@@ -1,0 +1,41 @@
+<section class="section" id="clients">
+  <h2>{% t "Kunden & Referenzen", "Clients & references" %}</h2>
+  <p class="section-lead">
+    {% t
+      "OSIRIS wird an verschiedenen außeruniversitären Forschungseinrichtungen eingesetzt. Eine Auswahl unserer Partner:",
+      "OSIRIS is used at various non-university research institutes. A selection of our partners:"
+    %}
+  </p>
+
+  {# Logo grid #}
+  <div class="client-logos">
+    {% for client in clients %}
+      <article class="client-logo-card" id="client-{{ client.id }}">
+        <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer">
+          <div class="client-logo-wrap">
+            <img src="{{ client.logo }}"
+                 alt="{{ client.name[lang] }}"
+                 loading="lazy">
+          </div>
+          <div class="client-meta">
+            <div class="client-name">{{ client.name[lang] }}</div>
+            <div class="client-type">{{ client.type[lang] }}</div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+
+  {# Kundenstories – jetzt nur ein Teaser, später echte Stories aus clients[*].stories #}
+  <div class="client-stories-intro">
+    <h3 class="client-stories-title">
+      {% t "Stories (bald verfügbar)", "Stories (coming soon)" %}
+    </h3>
+    <p class="client-stories-text">
+      {% t
+        "Wir arbeiten daran, ausgewählte Geschichten aus der Praxis aufzubereiten – wie Institute OSIRIS eingeführt haben, welche Workflows besonders wichtig sind und was sich im Alltag verändert hat.",
+        "We are working on sharing real-world stories – how institutes introduced OSIRIS, which workflows matter most, and how their everyday work has changed."
+      %}
+    </p>
+  </div>
+</section>

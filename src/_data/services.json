@@ -1,0 +1,191 @@
+[
+  {
+    "id": "open-source-support",
+    "icon": "lock-open",
+    "name": {
+      "de": "Open Source-Support",
+      "en": "Open source support"
+    },
+    "description": {
+      "de": "Wir entwickeln OSIRIS unter den Open Source-Prinzipien weiter. Für alle. Kostenlos.",
+      "en": "We continue to develop OSIRIS following open source principles. For everyone. Free of charge."
+    },
+    "features": {
+      "de": ["Community-Support", "Dokumentation", "Bug Fixing"],
+      "en": ["Community support", "Documentation", "Bug fixing"]
+    },
+    "link": {
+      "href": "https://github.com/JKoblitz/osiris",
+      "external": true,
+      "text": "GitHub"
+    }
+  },
+  {
+    "id": "hosting",
+    "icon": "hard-drives",
+    "name": {
+      "de": "Hosting",
+      "en": "Hosting"
+    },
+    "description": {
+      "de": "Kein Server? Kein Problem! Wir helfen euch mit vertrauenswürdigem Hosting und Update-Support – gern auch im Duett mit OSIRIS Portfolio.",
+      "en": "No server? No problem. We provide reliable hosting and update support – optionally together with OSIRIS Portfolio."
+    },
+    "features": {
+      "de": [
+        "Hosting nach besten Standards",
+        "Update-Service",
+        "Ersteinrichtung & Konfiguration"
+      ],
+      "en": [
+        "Hosting following best practices",
+        "Update service",
+        "Initial setup & configuration"
+      ]
+    }
+  },
+  {
+    "id": "setup",
+    "icon": "gear",
+    "name": {
+      "de": "Ersteinrichtung",
+      "en": "Initial setup"
+    },
+    "description": {
+      "de": "Egal ob auf unserem oder eurem Server: Wir unterstützen euch bei Installation und Einrichtung von OSIRIS.",
+      "en": "Whether on our server or yours: we support you with installing and setting up OSIRIS."
+    },
+    "features": {
+      "de": [
+        "Installation von OSIRIS & Abhängigkeiten",
+        "CRON-Jobs einrichten",
+        "Anbindung an andere IT-Systeme"
+      ],
+      "en": [
+        "Installation of OSIRIS & dependencies",
+        "Setting up cron jobs",
+        "Integration with other IT systems"
+      ]
+    }
+  },
+  {
+    "id": "portfolio",
+    "icon": "globe",
+    "name": {
+      "de": "OSIRIS Portfolio",
+      "en": "OSIRIS Portfolio"
+    },
+    "description": {
+      "de": "Ihr möchtet OSIRIS Portfolio nutzen, um eure Forschung nach außen zu präsentieren? Wir helfen bei Installation, Anpassung und Hosting.",
+      "en": "You want to use OSIRIS Portfolio to showcase your research? We help with installation, customization, and hosting."
+    },
+    "features": {
+      "de": [
+        "Installation von OSIRIS Portfolio",
+        "Anpassung an euer Corporate Design",
+        "Hosting & Support"
+      ],
+      "en": [
+        "Installation of OSIRIS Portfolio",
+        "Customisation to your corporate design",
+        "Hosting & support"
+      ]
+    }
+  },
+  {
+    "id": "training",
+    "icon": "chalkboard-teacher",
+    "name": {
+      "de": "Schulungen",
+      "en": "Training"
+    },
+    "description": {
+      "de": "Ihr wollt OSIRIS in eurem Unternehmen einführen? Wir schulen euer Team.",
+      "en": "Planning to introduce OSIRIS at your organisation? We train your team."
+    },
+    "features": {
+      "de": [
+        "Admin-Schulungen",
+        "Anwender-Schulungen",
+        "Individuelle Workshops"
+      ],
+      "en": [
+        "Admin training",
+        "User training",
+        "Custom workshops"
+      ]
+    }
+  },
+  {
+    "id": "data-migration",
+    "icon": "arrow-square-in",
+    "name": {
+      "de": "Altdatenimport",
+      "en": "Legacy data import"
+    },
+    "description": {
+      "de": "Ihr habt bereits ein System und wollt auf OSIRIS umsteigen? Wir unterstützen beim Import eurer Daten.",
+      "en": "Already using another system and want to move to OSIRIS? We support you with importing your data."
+    },
+    "features": {
+      "de": [
+        "Individuelle Datenmigration",
+        "Anbindung an bestehende Systeme",
+        "Datenqualitätssicherung"
+      ],
+      "en": [
+        "Custom data migration",
+        "Integration with existing systems",
+        "Data quality assurance"
+      ]
+    }
+  },
+  {
+    "id": "development",
+    "icon": "code",
+    "name": {
+      "de": "Weiterentwicklung",
+      "en": "Further development"
+    },
+    "description": {
+      "de": "Ihr habt spezielle Anforderungen? Wir entwickeln OSIRIS für euch weiter.",
+      "en": "Got specific requirements? We extend OSIRIS for your use case."
+    },
+    "features": {
+      "de": [
+        "Individuelle Anpassungen",
+        "Integration in bestehende Systeme",
+        "Entwicklung von Schnittstellen"
+      ],
+      "en": [
+        "Custom adaptations",
+        "Integration into existing systems",
+        "Development of interfaces"
+      ]
+    }
+  },
+  {
+    "id": "migration-out",
+    "icon": "sign-out",
+    "name": {
+      "de": "Migration in andere Systeme",
+      "en": "Migration to other systems"
+    },
+    "description": {
+      "de": "Ihr wollt OSIRIS nicht mehr nutzen? Wir helfen euch beim Umzug in ein anderes System.",
+      "en": "No longer want to use OSIRIS? We help you migrate to another system."
+    },
+    "features": {
+      "de": [
+        "Datenexport",
+        "Individuelle Beratung",
+        "Datenqualitätssicherung"
+      ],
+      "en": [
+        "Data export",
+        "Individual consulting",
+        "Data quality assurance"
+      ]
+    }
+  }
+]
