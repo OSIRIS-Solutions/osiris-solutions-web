@@ -212,7 +212,8 @@ a {
 }
 
 .container {
-  max-width: 1080px;
+  width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
 }
@@ -336,6 +337,13 @@ a {
   justify-content: center;
   padding: 0;
   cursor: pointer;
+  color: var(--color-primary);
+  font-size: large;
+}
+
+.scrolled .nav-toggle {
+  border: none;
+  background-color: var(--color-primary-soft);
 }
 
 /* Rechts-Bereich (Nav + Language) */
@@ -914,5 +922,13 @@ $heading-offset: 8rem;
 
   @media (min-width: 960px) {
     transform: translateX(1rem);
+  }
+}
+
+.break-sm {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: inline;
   }
 }
