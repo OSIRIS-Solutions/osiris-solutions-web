@@ -9,6 +9,7 @@
     "@11ty/eleventy": "^3.0.0"
   },
   "dependencies": {
+    "fast-glob": "^3.3.3",
     "sass": "^1.94.2"
   }
 }
