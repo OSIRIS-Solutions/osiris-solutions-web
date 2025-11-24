@@ -973,3 +973,120 @@ $heading-offset: 8rem;
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+.media-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.media-tile {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.media-thumb {
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  i {
+    font-size: 3rem;
+    color: var(--color-primary-soft);
+    display: block;
+  }
+}
+
+/* Lightbox */
+
+.media-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // hidden attribute
+  &[hidden] {
+    display: none;
+  }
+}
+
+.media-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.media-lightbox-inner {
+  position: relative;
+  z-index: 1;
+  max-width: min(90vw, 960px);
+  max-height: 90vh;
+  margin: 0 1rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 0.75rem 0.9rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+.media-lightbox img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.media-lightbox-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-soft);
+}
+
+.media-lightbox-caption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}

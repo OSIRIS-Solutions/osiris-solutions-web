@@ -1,0 +1,87 @@
+<section class="section" id="media">
+    <h2>{% t "Medien & Materialien", "Media & materials" %}</h2>
+    <p class="section-lead">
+        {% t
+      "Hier findest du eine Auswahl von Visuals, Screenshots und Grafiken rund um OSIRIS. Alle Materialien stehen unter CC BY 4.0 – bitte nenne „OSIRIS Solutions GmbH“ als Urheber:in.",
+      "Here you find a selection of visuals, screenshots and graphics about OSIRIS. All materials are licensed under CC BY 4.0 – please credit “OSIRIS Solutions GmbH”." %}
+    </p>
+    {% if media and media | length %}
+        <div class="media-grid">
+            {% for item in media %}
+                {% if item.src.endsWith('.pdf') %}
+                    <a class="media-tile" href="{{ item.src }}" target="_blank" rel="noopener noreferrer">
+                        <div class="media-thumb">
+                            <i class="ph-duotone ph-file-pdf"></i>
+                            <span class="media-pdf-label">{{ item.alt }}</span>
+                        </div>
+                    </a>
+                {% else %}
+                    <button class="media-tile" type="button" data-full="{{ item.src }}" data-alt="{{ item.alt }}">
+                        <div class="media-thumb">
+                            <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy"></div>
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="media-lightbox" hidden>
+                <div class="media-lightbox-backdrop"></div>
+                <figure class="media-lightbox-inner">
+                    <button class="media-lightbox-close" type="button" aria-label="Close">&times;</button>
+                    <img src="" alt="">
+                        <figcaption class="media-lightbox-caption">
+                            CC BY 4.0 – OSIRIS Solutions GmbH
+                        </figcaption>
+                    </figure>
+                </div>
+            {% else %}
+                <p>{% t "Aktuell sind noch keine Medien hinterlegt.", "No media items available yet." %}</p>
+            {% endif %}
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => { // ... dein bisheriger Code (Header, nav, etc.) ...
+                const lightbox = document.querySelector(".media-lightbox");
+                const lightboxImg = lightbox
+                    ? lightbox.querySelector("img")
+                    : null;
+                const closeBtn = lightbox
+                    ? lightbox.querySelector(".media-lightbox-close")
+                    : null;
+                const backdrop = lightbox
+                    ? lightbox.querySelector(".media-lightbox-backdrop")
+                    : null;
+                if (lightbox && lightboxImg && closeBtn && backdrop) {
+                    const openLightbox = (src, alt) => {
+                        lightboxImg.src = src;
+                        lightboxImg.alt = alt || "";
+                        lightbox.hidden = false;
+                        document
+                            .body
+                            .classList
+                            .add("no-scroll");
+                    };
+                    const closeLightbox = () => {
+                        lightbox.hidden = true;
+                        lightboxImg.src = "";
+                        lightboxImg.alt = "";
+                        document
+                            .body
+                            .classList
+                            .remove("no-scroll");
+                    };
+                    document.querySelectorAll("button.media-tile").forEach((tile) => {
+                        tile.addEventListener("click", () => {
+                            const src = tile.dataset.full;
+                            const alt = tile.dataset.alt;
+                            openLightbox(src, alt);
+                        });
+                    });
+                    closeBtn.addEventListener("click", closeLightbox);
+                    backdrop.addEventListener("click", closeLightbox);
+                    document.addEventListener("keydown", (ev) => {
+                        if (ev.key === "Escape") {
+                            closeLightbox();
+                        }
+                    });
+                }
+            });
+        </script>
