@@ -60,7 +60,7 @@ module.exports = [
             de: "Martinique unterstützt uns bei der Pflege des Community-Wiki und der Kommunikation mit unseren Nutzer:innen. Außerdem testet sie neue Funktionen auf Herz und Nieren.",
             en: "Martinique supports us in maintaining the community wiki and communicating with our users. She also puts new features to the test."
         },
-        photo: null,
+        photo: "/assets/img/team/martinique-frentrup.png",
         links: {
             email: "mailto:martinique.frentrup@osiris-solutions.de",
             github: "https://github.com/Martinique_F"
