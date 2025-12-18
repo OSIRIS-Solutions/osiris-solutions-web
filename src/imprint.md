@@ -31,7 +31,8 @@ E-mail: contact@osiris-solutions.de
 
 Registered in the Commercial Register  
 Register court: Amtsgericht Braunschweig  
-Registration number: HRB 211574  
+Registration number: HRB 211574
+EU VAT ID No.: DE400577379
 
 
 ### Responsible for content according to § 55 (2) RStV

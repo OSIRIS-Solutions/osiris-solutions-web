@@ -34,6 +34,7 @@ E-Mail: contact@osiris-solutions.de
 Eintragung im Handelsregister  
 Registergericht: Amtsgericht Braunschweig  
 Registernummer: HRB 211574  
+UmSt-IdNr.: DE400577379
 
 
 
