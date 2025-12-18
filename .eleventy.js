@@ -1,9 +1,23 @@
 const path = require("node:path");
 const sass = require("sass");
+// const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addFilter('year', function () {
+        // date is now
+        return new Date().toLocaleDateString('en-US', { year: 'numeric' });
+    });
+    // eleventyConfig.addPlugin(sitemap, {
+    //     sitemap: {
+    //         hostname: "https://osiris-solutions.de",
+    //     },
+    // });
+    // add `date` filter
+  eleventyConfig.addFilter('date', function (date, dateFormat) {
+    return new Date(date).toLocaleDateString('en-US', dateFormat);
+  })
     eleventyConfig.addExtension("scss", {
         outputFileExtension: "css",
 
@@ -39,7 +53,8 @@ module.exports = function (eleventyConfig) {
     });
     // Copy CNAME file to root of output
     eleventyConfig.addPassthroughCopy("src/CNAME");
-
+    eleventyConfig.addPassthroughCopy("src/robots.txt");
+    
     return {
         dir: {
             input: "src",

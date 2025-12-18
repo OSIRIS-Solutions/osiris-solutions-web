@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/static.njk
 title: Imprint
 lang: en
 permalink: /en/imprint/

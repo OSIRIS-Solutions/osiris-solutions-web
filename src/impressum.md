@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/static.njk
 title: Impressum
 lang: de
 permalink: /impressum/
