@@ -12,19 +12,18 @@ module.exports = [
     logo: "/assets/img/logos/dsmz.svg",
     url: "https://www.dsmz.de",
     stories: [
-      // optional, später nutzbar
-      {
-        slug: "dsmz-osiris",
-        title: {
-          de: "OSIRIS und die DSMZ",
-          en: "OSIRIS and the DSMZ"
-        },
-        excerpt: {
-          de: "Von der Sammlung bis zur Nutzung für Berichte und die Webseite.",
-          en: "From collection to use for reports and the website."
-        },
-        published: true
-      }
+      // {
+      //   slug: "dsmz-portfolio",
+      //   title: {
+      //     de: "OSIRIS und die DSMZ",
+      //     en: "OSIRIS and the DSMZ"
+      //   },
+      //   excerpt: {
+      //     de: "Von der Sammlung bis zur Nutzung für Berichte und die Webseite.",
+      //     en: "From collection to use for reports and the website."
+      //   },
+      //   published: true
+      // }
     ]
   },
   // {
@@ -84,4 +83,18 @@ module.exports = [
     url: "https://leibniz-ifl.de/",
     stories: []
   },
+  {
+    id: "prif",
+    name: {
+      de: "PRIF – Leibniz-Institut für Friedens- und Konfliktforschung",
+      en: "Peace Research Institute Frankfurt (PRIF)"
+    },
+    type: {
+      de: "Leibniz-Gemeinschaft",
+      en: "Leibniz Association"
+    },
+    logo: "/assets/img/logos/prif.svg",
+    url: "https://prif.org",
+    stories: []
+  }
 ];
